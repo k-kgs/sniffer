@@ -651,7 +651,7 @@ export default function Home() {
             {inputLetters.map((l, i) => (
               <input
                 key={i}
-                ref={el => inputRefs.current[i] = el}
+                ref={el => { inputRefs.current[i] = el; }}
                 type="text"
                 inputMode="text"
                 autoComplete="off"
