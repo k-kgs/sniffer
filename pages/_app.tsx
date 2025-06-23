@@ -9,6 +9,7 @@ import React, {
   FormEvent,
   KeyboardEvent,
 } from 'react';
+import { initPostHog } from '@/lib/posthog';
 
 // Popular 5-letter words (add more as desired)
 const WORDS = [
@@ -477,6 +478,10 @@ export default function Home() {
     setStage('shoot');
     setResult('');
   }, [word]);
+
+  useEffect(() => {
+    initPostHog();
+  }, []);
 
   // --- Unified, Seamless CSS ---
   const styles = (
